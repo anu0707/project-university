@@ -1,0 +1,51 @@
+{% load static %}
+{% static "images" as images %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Thesis Submission Examiner</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <header>
+        <h1>PANJAB UNIVERSITY CHANDIGARH</h1>
+    </header>
+    <nav>
+        <div actions="logout" method="post">
+            <a href="{% url 'home' %}">LOGOUT</a>
+        </div>
+    </nav>
+    {% if thesises %}
+    <table>
+        <tr>
+            <th>Title Id</th>
+            <th>Student Name</th>
+            <th>Speciality</th>
+            <th>Thesis Type</th>
+            <th>Status</th>
+            <th>Download File</th>
+        </tr>
+        {% for thesis in thesises %}
+        <tr>
+            <td>{{thesis.TitleId}}</td>
+            <td>{{thesis.Student_Name}}</td>
+            <td>{{thesis.Speciality}}</td>
+            <td>{{thesis.Thesis_Type}}</td>
+            <td>
+                <select>
+                <option value="Pending">Not Decided</option>
+                <option value="Accepted">Accepted</option>
+                <option value="Rejected">Rejected</option>
+                </select>
+            </td>
+            <td> Download File</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h2>No Thesisi Assigned Yet</h2>
+    {% endif %}
+    <button></button>
+</body>
+</html>

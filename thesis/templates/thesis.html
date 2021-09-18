@@ -1,0 +1,59 @@
+{% load static %}
+{% load render_table from }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Acceptance </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/new.css' %}" />
+</head>
+<body>
+    <h1>Thesis Remuneration Bill Generation Form</h1>
+    <div class="form">
+        <form name="form1" action="{% url 'upload2' %}" method="post">
+            {% csrf_token %}
+            <label>ExaminerID:   </label>
+            <input type="text" name="ExaminerId" placeholder="ExaminerId">
+            <br>
+            <br>
+            <br>
+            <label>TitleID:      </label>
+            <input type="number" placeholder="TitleId" name="TitleId">
+            <br>
+            <br>
+            <br>
+            <label>Student Name: </label>
+            <input type="text" placeholder="Student Name" name="Student_Name">
+            <br>
+            <br>
+            <br>
+            <label>Speciality:   </label>
+            <input type="text" placeholder="Speciality" name="Speciality">
+            <br>
+            <br>
+            <br>
+            <label>Session:      </label>
+            <input type="text" placeholder="Session" name="Session">
+            <br>
+            <br>
+            <br>
+            <label>Thesis Type:  </label>
+            <select name="Thesis_Type">
+                <option value="Thesis Type">Thesis Type</option>
+                <option value="Fresh">Fresh</option>
+                <option value="Old">Old</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <label>Upload Thesis</label>
+            <input type="file" name="file" id="nyfile">
+            <br><br><br>
+            <input type="submit" value="Click">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</body>
+</html>

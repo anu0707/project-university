@@ -1,0 +1,43 @@
+{% load static %}
+{% static "images" as images %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Thesis Submission Examiner</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/styled-table.css' %}" />
+
+</head>
+<body>
+	<header>
+		<h1>PANJAB UNIVERSITY CHANDIGARH</h1>
+	</header>
+	<nav>
+		<a href="{% url 'upload' %}">Upload thesis</a>
+		<div actions="logout" method="post">
+			<a href="{% url 'home' %}">LOGOUT</a>
+		</div>
+	</nav>
+	<table class="styled-table">
+		<tr>
+			<th>Title Id</th>
+			<th>Student Name</th>
+			<th>Speciality</th>
+			<th>Thesis Type</th>
+			<th>Status</th>
+			<th>Assign To</th>
+		</tr>
+		{% for {{thesis}} in thesises %}
+		<tr>
+			<td>{{thesis.TitleId}}</td>
+			<td>{{thesis.Student_Name}}</td>
+			<td>{{thesis.Speciality}}</td>
+			<td>{{theis.Thesis_Type}}</td>
+			<td>{{thesis.Status}}</td>
+			<td></td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+div.form
+{
+    display: block;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: azure;
+    font-size: larger;
+    width: 300px;
+    border: 5px solid rgb(113, 0, 128);
+    padding: 50px;
+    margin-left: 450px;
+}
+h1{
+    text-align: center;
+    border: 5px solid rgb(128, 0, 92);
+}
+form
+{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+body{
+    background-color:rgb(250, 224, 221)
+}

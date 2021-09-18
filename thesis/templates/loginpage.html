@@ -1,0 +1,44 @@
+﻿{% load static %}
+{% static "images" as images %}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>login page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+</head>
+
+<body>
+    <div class="bg-image"></div>
+    <div class="container1">
+        <img src="{{images}}/logo_pu.png" class="pu" />
+        <h7></h7>
+    </div>
+    <div class="container2">
+        <form action="login/" method="post">
+            {% for msg in messages %}
+            <h3>{{msg}}</h3>
+            {% endfor %}
+            {% csrf_token %}
+            <h2>Choose Account Type</h2>
+            <input type="radio" name="choice" id="admin" value="1" class="in" />
+            <label for="admin">
+                <img src="{{images}}/admin.png" class="options" />
+            </label>
+            <input type="radio" name="choice" id="examinor" value="2" class="in" />
+            <label for="examinor">
+                <img src="{{images}}/evaluator.png" class="options" />
+            </label>
+            <h3></h3>
+            <input type="text" name="username" placeholder="Username" class="user" />
+            <h2></h2>
+            <input type="password" name="password" placeholder="Password" class="pass" />
+            <h6></h6>
+            <a href="fp" style="color: darkblue ">Forgot Password?</a>
+            <h6></h6>
+            <input type="image" name="submit" src="{{images}}/login.png" class="login" alt="submit" value="Click" />
+        </form>
+    </div>
+</body>
+</html>

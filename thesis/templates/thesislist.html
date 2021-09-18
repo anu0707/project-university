@@ -1,0 +1,23 @@
+{% load static %}
+{% static "images" as images %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Thesis Submission Examiner</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <header>
+        <h1>PANJAB UNIVERSITY CHANDIGARH</h1>
+    </header>
+    <nav>
+        <a href="">HOME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+        <a href="">CONSENT FORM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</a>
+        <a href="">THESIS LIST</a>
+        <div>
+            <a href="{% url 'home' %}">LOGOUT</a>
+        </div>
+    </nav>
+</body>
+</html>
